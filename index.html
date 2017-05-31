@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Noether - Editor</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style>
+		body {
+			padding-left: 2em;
+			background-color: gainsboro
+		}
+
+        textarea, input {
+            font-family: Courier New;
+			border: none
+        }
+	</style>
+</head>
+	<body>
+		<h1>Noether Interpreter</h1>
+		<h3>Code:</h3>
+		<textarea id="code" rows="4" oninput="javascript:chars()" cols="40"></textarea>
+		<br/>
+		<h3>Input:</h3>
+		<textarea id="input" rows="4" cols="40"></textarea>
+		<br/><br/>
+		<button id="run" onclick="javascript:main()">Engage</button>
+		<button id="clear" onclick="javascript:clearText()">Clear</button>
+		<br/>
+		Character count: <span id="ccount">0</span> characters
+		<h3>Output:</h3>
+		<textarea id="output" readonly="readonly" rows="4" cols="40" style="cursor: default;"></textarea>
+		<br/>
+		<a href="javascript:getperma()">Get permalink</a>
+		<script src="editor.js"></script>
+		<script src="interpreter.js"></script>
+		<script>
+			function main() {
+				document.getElementById("output").style.color = "black";
+				interpreter();
+			}
+		</script>
+	</body>
+</html>
