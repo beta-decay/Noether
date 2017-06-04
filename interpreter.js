@@ -84,7 +84,15 @@ function check() {
 	} else if (currChar == "^") {
 		A = stack.pop();
 		B = stack.pop();
-		stack.push(Math.pow(B,A));
+		if (typeof B == "string" && typeof A == "string") {
+			x = B.split(A);
+			for (var i = 0; i < x.length; i++) {
+				stack.push(x[i]);
+			}
+		} else {
+			stack.push(Math.pow(B,A));
+		}
+		
 		position += 1;
 	} else if (currChar == "=") {
 		A = stack.pop();
@@ -133,7 +141,7 @@ function check() {
 		stack.push(string);
 		position += 1;
 	} else if (currChar == "~") {
-		if ("(){}+-naod@;|r~*/%I<>=^vLP_`&.$".indexOf(code[position+1]) === -1) {
+		if ("(){}+-*/^=><&|\"~ I_UR@;DSL#%".indexOf(code[position+1]) === -1) {
 			variables[code[position+1]] = stack[stack.length-1];
 			position += 2;
 		} else {
@@ -291,7 +299,7 @@ function check() {
 			test = true;
 			position += 1;			
 		}
-	} else if (currChar == "£") {
+	} else if (currChar == "#") {
 		stack.pop();
 		position += 1;
 	} else if (currChar == "%") {
