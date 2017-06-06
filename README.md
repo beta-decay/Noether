@@ -151,6 +151,13 @@ All of these functions pop the top two items off the stack
 
  - **All types:** Performs a bitwise OR operation on the top two items of the stack
  
+ ---
+ 
+ ***T***
+ 
+  - **Number and a Number:** The first number is the number which is passed to the trig function, the second is the mode number (see *Trig Modes* below)
+  - **String and a Number:** The number is the number which is passed to the trig function and the string is the mode name (see *Trig Modes* below)
+ 
 ### Three argument functions
 
 These functions pop three items off the stack
@@ -172,3 +179,18 @@ The function D pops the mode number off the stack:
 6. Pushes the ISO date string
   
 Any other number will mean that D pushes the UNIX timestamp.
+
+### Trig Modes
+
+The function T pops the number, *x* and the mode number/name:
+
+0. **sin:** Pushes the sine of x in radians
+1. **cos:** Pushes the cosine of x in radians
+2. **tan:** Pushes the tangent of x in radians
+3. **asin:** Pushes the arcsine of x
+4. **acos:** Pushes the arccosine of x
+5. **atan:** Pushes the arctangent of x
+6. **DtoR:** Converts x from degrees to radians
+7. **RtoD:** Converts x from radians to degrees
+8. **pi:** Pushes the value of pi (nothing is popped)
+9. **tau:** Pushes the value of tau (2\*pi) [nothing is popped]
