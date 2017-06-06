@@ -305,6 +305,38 @@ function check() {
 	} else if (currChar == "%") {
 		stack.unshift(stack.pop());
 		position += 1;
+	} else if (currChar == "T") {
+		A = stack.pop();
+		B = stack.pop();
+
+		mode = A;
+		n = 100000000;
+
+		if (mode == 0 || mode == "sin") {
+			stack.push(Math.round(Math.sin(B)*n)/n);
+		} else if (mode == 1 || mode == "cos") {
+			stack.push(Math.round(Math.cos(B)*n)/n);
+		} else if (mode == 2 || mode == "tan") {
+			stack.push(Math.round(Math.tan(B)*n)/n);
+		} else if (mode == 3 || mode == "asin") {
+			stack.push(Math.round(Math.asin(B)*n)/n);
+		} else if (mode == 4 || mode == "acos") {
+			stack.push(Math.round(Math.acos(B)*n)/n);
+		} else if (mode == 5 || mode == "atan") {
+			stack.push(Math.round(Math.atan(B)*n)/n);
+		} else if (mode == 6 || mode == "DtoR") {
+			stack.push(B*Math.PI/180);
+		} else if (mode == 7 || mode == "RtoD") {
+			stack.push(B*180/Math.PI);
+		} else if (mode == 8 || mode == "pi") {
+			stack.push(B);
+			stack.push(Math.PI);
+		} else if (mode == 9 || mode == "tau") {
+			stack.push(B);
+			stack.push(2*Math.PI);
+		}
+
+		position += 1;
 	} else {
 		if (variables.hasOwnProperty(code[position])) {
 			stack.push(variables[code[position]]);
