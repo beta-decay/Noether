@@ -18,6 +18,23 @@ All of these functions pop the top two items off the stack
  - **String and a Number:** converts the number to a string, concatenates it to the string and pushes the result
  - **String and a String:** concatenates the strings and pushes the result
  
- ***-***
+---
+ 
+***-***
  
  - **Number and a Number:** subtracts the two  numbers and pushes the result
+ - **String and a Number:** deletes the character at the given index and pushes the result
+ - **String and a String:** removes characters according to the given regex string from the first string and pushes the result
+ 
+---
+ 
+***\****
+ 
+ - **Number and a Number:** Multiplies the two numbers and pushes the result
+ - **String and a Number:** String multiplication
+ 
+---
+ 
+***/***
+ 
+ - **Number and a Number:** Divides the two numbers and pushes the result
