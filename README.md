@@ -162,6 +162,7 @@ These functions pop three items off the stack
 ### Date Modes
  
 The function D pops the mode number off the stack:
+
  - **0:** Pushes the number of seconds in the time
  - **1:** Pushes the number of minutes in the time
  - **2:** Pushes the number of hours in the time
