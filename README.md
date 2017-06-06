@@ -159,9 +159,9 @@ These functions pop three items off the stack
 
  - **String, Number *A*, Number *B*:** Slices the string from position A to position B
  
- ### Date Modes
+### Date Modes
  
- The function D pops the mode number off the stack:
+The function D pops the mode number off the stack:
  - **0:** Pushes the number of seconds in the time
  - **1:** Pushes the number of minutes in the time
  - **2:** Pushes the number of hours in the time
@@ -170,4 +170,4 @@ These functions pop three items off the stack
  - **5:** Pushes the current year
  - **6:** Pushes the ISO date string
   
- Any other number will mean that D pushes the UNIX timestamp.
+Any other number will mean that D pushes the UNIX timestamp.
