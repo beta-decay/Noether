@@ -3,6 +3,36 @@ Named after the mathematician Emmy Noether, Noether is a revse polish notation, 
 
 ***WIP***
 
+## Control Flow
+
+### If Statements
+
+If statements are defined using curly brackets
+
+***If-then***
+
+An if-then statement is defined like so:
+
+    {<expression>}{<true code>}
+    
+If the stack at `<expression>` ends at 1, then the code at `<true code>` is run. Otherwise, the program continues past the if statement.
+
+***If-then-else***
+
+An if-then-else statement is defined like so:
+
+    {<expression>}{<true code>}{<false code>}
+    
+If the stack at `<expression>` ends at 1, then the code at `<true code>` is run. Otherwise, the code at `<false code>` is run.
+
+### While loop
+
+A loop is defined using parentheses like so:
+
+    (<code>)
+    
+At the `(`, the exit condition for the loop is popped off the stack. If the top of the stack at `)` equals the exit condition, then the loop ends and the program continues. Otherwise, the code goes back to `(` and it loop again.
+
 ## Built-in Functions
 
 These are the functions which exist in Noether. They are subject to change without prior notice.
@@ -81,6 +111,19 @@ All of these functions except P pop the  top item off the stack
 
  - **All types:** Pops the top item off  the string and does nothing
  
+ ---
+ 
+ ***W***
+ 
+ - **Number:** Converts number to string
+ - **String:** Converts string to number
+ 
+ ---
+ 
+ ***A***
+ 
+ - **Number:** Returns one of the stored constants according to the mode number (see *Constant Modes* below)
+ - **String:** Returns one of the stored constants according to the mode name (see *Constant Modes* below)
 
 ### Double argument functions
 
@@ -194,3 +237,13 @@ The function T pops the number, *x* and the mode number/name:
 7. **RtoD:** Converts x from radians to degrees
 8. **pi:** Pushes the value of pi (nothing is popped)
 9. **tau:** Pushes the value of tau (2\*pi) [nothing is popped]
+
+### Constant Modes
+
+The function A pops the mode number/name:
+
+0. **alpha:** Pushes the string "abcdefghijklmnopqrstvwxyz"
+1. **ALPHA:** Pushes the string "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+2. **nums:** Pushes the string "0123456789"
+3. **pi:** Pushes the value of pi
+4. **e:** Pushes the value of e (the base of the natural logarithm)
