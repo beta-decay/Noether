@@ -285,14 +285,14 @@ function check() {
 			}
 			position += 1;
 		} else if (ifstage == 2) {
-			ifstage = 1;
-			test = true;
-			position += 1;
-			if (code[position] == "{") {
+			if (code[position+1] == "{") {
+				position += 1;
 				while (code[position] != "}") {
 					position += 1;
 				}
 			}
+			ifstage = 1;
+			test = true;
 			position += 1;
 		} else if (ifstage == 3) {
 			ifstage = 1;
@@ -334,6 +334,34 @@ function check() {
 		} else if (mode == 9 || mode == "tau") {
 			stack.push(B);
 			stack.push(2*Math.PI);
+		} else if (mode == 10 || mode == "abs") {
+			stack.push(Math.abs(B));
+		}
+
+		position += 1;
+	} else if (currChar == "W") {
+		A = stack.pop();
+
+		if (typeof A == "string") {
+			stack.push(parseInt(A));
+		} else {
+			stack.push(A.toString());
+		}
+
+		position += 1;
+	} else if (currChar == "A") {
+		mode = stack.pop();
+
+		if (mode == 0 || mode == "alpha") {
+			stack.push("abcdefghijklmnopqrstuvwxyz");
+		} else if (mode == 1 || mode == "ALPHA") {
+			stack.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		} else if (mode == 2 || mode == "nums") {
+			stack.push("0123456789");
+		} else if (mode == 3 || mode == "pi") {
+			stack.push(Math.PI);
+		} else if (mode == 4 || mode == "e") {
+			stack.push(Math.E);
 		}
 
 		position += 1;
