@@ -1,8 +1,3 @@
-function getCharCode() {
-	var chr = document.getElementById("charRef").value.charCodeAt(0);
-	document.getElementById("asciiRef").value = chr||"";
-}
-
 function decode(string) {
 	return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))))
 }
@@ -14,7 +9,8 @@ function encode(string) {
 
 function getperma() {
 	var lcode = document.getElementById("code").value;
-	var link = location.protocol + '//' + location.host + location.pathname + "?code=" + encode(lcode);
+	var linput = document.getElementById("input").value;
+	var link = location.protocol + '//' + location.host + location.pathname + "?code=" + encode(lcode) + "&input=" + encode(linput);
 	
 	window.open(link);
 }
@@ -36,9 +32,14 @@ function getURLParameter(name) {
 }
 
 var rcode = getURLParameter("code");
+var rinput = getURLParameter("input");
 
 if (rcode !== null) {
 	document.getElementById("code").value = decode(rcode);
+}
+
+if (rinput !== null) {
+	document.getElementById("input").value = decode(rinput);
 }
 
 chars();
