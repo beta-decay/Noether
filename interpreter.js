@@ -1,7 +1,7 @@
 var code, stack, position;
 var output, variables, funcpos;
-var temppos, exitcondition
-var ifstage, testval, test
+var temppos, exitcondition, delaypos;
+var ifstage, testval, test;
 var functions;
 var funccode;
 
