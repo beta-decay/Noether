@@ -27,7 +27,11 @@ function check() {
 		try {
 			n = "";
 			while ("0123456789.".indexOf(code[position]) !== -1) {
-				n += code[position];
+				if (code[position] == "N") {
+					n += "-";
+				} else {
+					n += code[position];
+				}
 				position += 1;
 			}
 			stack.push(Number(n));
