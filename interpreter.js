@@ -23,10 +23,10 @@ function check() {
 	if (currChar == "P") {
 		output += stack[stack.length-1];
 		position += 1
-	} else if (".0123456789".indexOf(currChar) !== -1) {
+	} else if (".0123456789N".indexOf(currChar) !== -1) {
 		try {
 			n = "";
-			while ("0123456789.".indexOf(code[position]) !== -1) {
+			while ("0123456789.N".indexOf(code[position]) !== -1) {
 				if (code[position] == "N") {
 					n += "-";
 				} else {
