@@ -1,7 +1,5 @@
 # Noether
-Named after the mathematician Emmy Noether, Noether is a revse polish notation, stack-based programming language with similarities to the Fourier programming language. In particular, Noether was designed to be a more functional and more useful version of Fourier.
-
-***WIP***
+Named after the mathematician [Emmy Noether](http://en.wikipedia.org/wiki/Emmy_Noether), Noether is a RPN ([Reverse Polish Notation](https://xkcd.com/645/)) stack-based programming language with similarities to the [Fourier programming language](https://github.com/beta-decay/Fourier). In particular, Noether was designed to be a more functional and more useful version of Fourier.
 
 ## Control Flow
 
@@ -136,6 +134,7 @@ All of these functions except P pop the  top item off the stack
 All of these functions pop the top two items off the stack
 
 ***+***
+
  - **Number and a Number:** adds the two  numbers and pushes the result
  - **String and a Number:** converts the number to a string, concatenates it to the string and pushes the result
  - **String and a String:** concatenates the strings and pushes the result
