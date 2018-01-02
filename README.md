@@ -57,6 +57,12 @@ These functions do not pop anything off the stack
 
  - Pushes the user input
  
+ ---
+ 
+ ***N***
+ 
+ - Negates any number which follows it. E.g. `N12P` outputs `-12`.
+ 
 ### Single argument functions
 
 All of these functions except P pop the  top item off the stack
