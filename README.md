@@ -47,7 +47,7 @@ These functions do not pop anything off the stack
 
 ***%***
 
- - Rotates the stack
+ - Rotates the stack. I.e. `11, 12, 13, 14` becomes `14, 11, 12, 13`
  
 ---
 
@@ -60,6 +60,12 @@ These functions do not pop anything off the stack
  ***N***
  
  - Negates any number which follows it. E.g. `N12P` outputs `-12`.
+ 
+ ---
+ 
+ ***$***
+ 
+ - Reverses the stack. I.e. `11, 12, 13, 14` becomes `14, 13, 12, 11`
  
 ### Single argument functions
 
