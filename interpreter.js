@@ -371,6 +371,8 @@ function check() {
 		position += 1;
 	} else if (currChar == "$") {
 		stack = stack.reverse();
+		
+		position += 1;
 	} else {
 		if (variables.hasOwnProperty(code[position])) {
 			stack.push(variables[code[position]]);
