@@ -373,16 +373,17 @@ function check() {
 		stack = stack.reverse();
 		
 		position += 1;
-    } else if (currChar == "?") {
-        output += "\n";
-        position += 1;
-    } else if (currChar == "!") {
-        position += 1;
-        if (typeof variables[code[position]] != "string") {
-            variables[code[position]] += 1;
-        }
-        position += 1;
-    } else {
+   	} else if (currChar == "?") {
+        	output += "\n";
+        	position += 1;
+    	} else if (currChar == "!") {
+        	position += 1;
+        	if (typeof variables[code[position]] != "string") {
+            		variables[code[position]] += 1;
+			stack.push(variables[code[position]]);
+        	}
+        	position += 1;
+    	} else {
 		if (variables.hasOwnProperty(code[position])) {
 			stack.push(variables[code[position]]);
 			position += 1;
