@@ -67,6 +67,18 @@ These functions do not pop anything off the stack
  
  - Reverses the stack. I.e. `11, 12, 13, 14` becomes `14, 13, 12, 11`
  
+ ---
+ 
+ ***?***
+ 
+ - Prints a newline
+ 
+ ---
+ 
+ ***!***
+ 
+ - Increments the variable which follows directly after the command (if the variable is a number).
+ 
 ### Single argument functions
 
 All of these functions except P pop the  top item off the stack
