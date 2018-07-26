@@ -186,6 +186,12 @@ function check() {
 		}
 
 		position += 1;
+	} else if (currChar == "B") {
+		A = stack.pop()
+		if (typeof A != "string") {
+			output += String.fromCharCode(A);
+		}
+		position += 1;
 	} else if (currChar == "@") {
 		output = '';
 		position += 1;
