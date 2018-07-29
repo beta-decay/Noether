@@ -145,7 +145,7 @@ function check() {
 		stack.push(string);
 		position += 1;
 	} else if (currChar == "~") {
-		if ("(){}+-*/^=><&|\"~ I_UR@;DSL#%".indexOf(code[position+1]) === -1) {
+		if ("(){}+-*/^=><&|\"~ _@;#%$!?ABDILNPRSTUW".indexOf(code[position+1]) === -1) {
 			variables[code[position+1]] = stack[stack.length-1];
 			position += 2;
 		} else {
