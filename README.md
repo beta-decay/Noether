@@ -1,6 +1,22 @@
 # Noether
 Named after the mathematician [Emmy Noether](http://en.wikipedia.org/wiki/Emmy_Noether), Noether is a RPN ([Reverse Polish Notation](https://xkcd.com/645/)) stack-based programming language with similarities to the [Fourier programming language](https://github.com/beta-decay/Fourier). In particular, Noether was designed to be a more functional and more useful version of Fourier.
 
+## Links
+
+- Online interpreter: https://beta-decay.github.io/noether
+
+## Variables
+
+To assign a value to a variable, you use the syntax
+
+    ~i
+    
+Where `~` is the assignment function and `i` is the variable. This assigns the value on the top of the stack to the variable `i`.
+
+If a variable is used that has not been previously assigned to, its value is automatically set to `0`.
+
+Functions have uppercase names so variables must have lowercase names to avoid raising an error.
+
 ## Control Flow
 
 ### If Statements
@@ -77,7 +93,7 @@ These functions do not pop anything off the stack
  
  ***!***
  
- - Increments the variable which follows directly after the command (if the variable is a number).
+ - Increments the variable which follows directly after the command (if the variable is a number). If variable had not been previously used, it is set to 1.
  
 ### Single argument functions
 
@@ -146,6 +162,13 @@ All of these functions except P pop the  top item off the stack
  
  - **Number:** Returns one of the stored constants according to the mode number (see *Constant Modes* below)
  - **String:** Returns one of the stored constants according to the mode name (see *Constant Modes* below)
+ 
+ ---
+ 
+ ***B***
+ 
+ - **Number:** Returns the character with ASCII code `n`
+ - **String:** Returns the ASCII code of the first character of the string
 
 ### Double argument functions
 
