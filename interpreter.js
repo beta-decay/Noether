@@ -189,7 +189,7 @@ function check() {
 	} else if (currChar == "B") {
 		A = stack.pop()
 		if (typeof A != "string") {
-			output += String.fromCharCode(A);
+			stack.push(String.fromCharCode(A));
 		}
 		position += 1;
 	} else if (currChar == "@") {
@@ -384,10 +384,15 @@ function check() {
         	position += 1;
     	} else if (currChar == "!") {
         	position += 1;
-        	if (typeof variables[code[position]] != "string") {
-            		variables[code[position]] += 1;
+		if (variables.hasOwnProperty(code[position])) {
+        		if (typeof variables[code[position]] != "string") {
+            			variables[code[position]] += 1;
+				stack.push(variables[code[position]]);
+        		}
+		} else {
+			variables[code[position]] = 1;
 			stack.push(variables[code[position]]);
-        	}
+		}
         	position += 1;
     	} else {
 		if (variables.hasOwnProperty(code[position])) {
