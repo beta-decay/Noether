@@ -188,7 +188,9 @@ function check() {
 		position += 1;
 	} else if (currChar == "B") {
 		A = stack.pop()
-		if (typeof A != "string") {
+		if (typeof A == "string") {
+			stack.push(A.charCodeAt(0));
+		} else {
 			stack.push(String.fromCharCode(A));
 		}
 		position += 1;
