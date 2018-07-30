@@ -1,4 +1,4 @@
-import re, random, time, math, datetime
+import re, random, time, math, datetime, sys
 
 def check():
     global code, stack, position, output, variables, funcpos, temppos, exitcondition, delaypos, ifstage, testval, test, functions, funccode
@@ -399,7 +399,12 @@ def runCode():
 
 def interpreter():
     global code, stack, position, output, variables, funcpos, temppos, exitcondition, delaypos, ifstage, testval, test, functions, funccode
-    code = input()
+
+    fname = sys.argv[1]
+
+    with open(fname, "r") as f:
+        code = f.read()
+    
     position = 0
     stack = []
     variables = {}
