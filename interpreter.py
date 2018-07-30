@@ -174,7 +174,7 @@ def check():
         if type(A) == str:
             stack.append(ord(A))
         else:
-            stack.append(chr(A))
+            stack.append(chr(int(A)))
 
         position += 1
     elif currChar == "@":
