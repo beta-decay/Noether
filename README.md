@@ -293,3 +293,56 @@ The function A pops the mode number/name:
 2. **nums:** Pushes the string "0123456789"
 3. **pi:** Pushes the value of pi
 4. **e:** Pushes the value of e (the base of the natural logarithm)
+
+## Example Programs
+
+### Hello World
+
+    "Hello, World!"P
+    
+[**Try it online!**](https://beta-decay.github.io/noether?code=IkhlbGxvLCBXb3JsZCEiUA&input=)
+    
+Prints the phrase "Hello, World!".
+
+***Explanation:***
+
+    "Hello, World!"  - Push the string "Hello, World!"
+                   P - Print the top of the stack
+
+### Quine
+
+    "~a34BPaP34BPaP"~a34BPaP34BPaP
+    
+[**Try it online!**](https://beta-decay.github.io/noether?code=In5hMzRCUGFQMzRCUGFQIn5hMzRCUGFQMzRCUGFQ&input=)
+    
+Outputs its own source code
+
+***Explanation:***
+
+    "~a34BPaP34BPaP"~a             - Push the string "~a34BPaP34BPaP" ans stores in the variable a
+                      34BP         - Print the character with ASCII code 34 (")
+                          aP       - Print the variable a
+                            34BP   - Print the character with ASCII code 34 (")
+                                aP - Print the variable a
+
+### Fibonacci Numbers
+
+    1~a~bI(aPb+~cb~ac~b?!i)
+    
+[**Try it online!**](https://beta-decay.github.io/noether?code=MX5hfmJJKGFQYit-Y2J-YWN-Yj8haSk&input=MTI)
+    
+Outputs the first `n` Fibonacci Numbers, where `n` is given as input.
+
+***Explanation:***
+
+    1                       - Push 1 onto the stack
+     ~a                     - Store 1 in a
+       ~b                   - Store 1 in b
+         I(               ) - Loop until the top of the stack equals the input
+           aP               - Print a
+             b+             - Add a and b
+               ~c           - Store the result in c
+                 b~a        - Set a equal to b
+                    c~b     - Set b equal to c
+                       ?    - Print a newline
+                        !i  - Increment i
