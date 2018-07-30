@@ -4,6 +4,7 @@ Named after the mathematician [Emmy Noether](http://en.wikipedia.org/wiki/Emmy_N
 ## Links
 
 - Online interpreter: https://beta-decay.github.io/noether
+- Try it Online: https://tio.run/#noether
 
 ## Variables
 
