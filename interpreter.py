@@ -1,5 +1,11 @@
 import re, random, time, math, datetime, sys
 
+def number(x):
+    try:
+        return int(x)
+    except:
+        return float(x)
+
 def check():
     global code, stack, position, output, variables, funcpos, temppos, exitcondition, delaypos, ifstage, testval, test, functions, funccode
     
@@ -18,9 +24,9 @@ def check():
                 
                 position += 1
                 
-            stack.append(float(n))
+            stack.append(number(n))
         except:
-            stack.append(float(n))
+            stack.append(number(n))
         
     elif currChar == " ":
         position += 1
@@ -336,7 +342,7 @@ def check():
         A = stack.pop()
 
         if type(A) == str:
-            stack.append(float(A))
+            stack.append(number(A))
         else:
             stack.append(str(A))
 
