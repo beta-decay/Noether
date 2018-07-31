@@ -201,7 +201,7 @@ function check() {
 		A = stack.pop();
 		if (typeof A != "string") {
 			var delaypos = position+1;
-			setTimeout(function(){position = delaypos;runCode();}, delay*1000);
+			setTimeout(function(){position = delaypos;runCode();}, A*1000);
 			return code.length*2;
 		} else {
 			stack.push(A);
