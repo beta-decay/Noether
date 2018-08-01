@@ -145,7 +145,7 @@ function check() {
 		stack.push(string);
 		position += 1;
 	} else if (currChar == "~") {
-		if ("(){}+-*/^=><&|\"~ _@;#%$!?ABDILNPRSTUW".indexOf(code[position+1]) === -1) {
+		if ("(){}+-*/^=><&|\"~ _@;#%$!?ABDILMNPRSTUW".indexOf(code[position+1]) === -1) {
 			variables[code[position+1]] = stack[stack.length-1];
 			position += 2;
 		} else {
@@ -361,6 +361,13 @@ function check() {
 		}
 
 		position += 1;
+   } else if (currChar == "M") {
+      A = stack.pop();
+      B = stack.pop();
+
+      if (typeof A != "string" && typeof B != "string") {
+          stack.push(B%A);
+      }
 	} else if (currChar == "A") {
 		mode = stack.pop();
 
