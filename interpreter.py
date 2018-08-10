@@ -136,7 +136,7 @@ def check():
         position += 1
         
     elif currChar == "~":
-        if not code[position+1] in "(){}+-*/^=><&|\"~ _@;#%$!?ABDILNPRSTUW":
+        if not code[position+1] in "(){}+-*/^=><&|\"~ _@;#%$!?ABDILMNPRSTUW":
             variables[code[position+1]] = stack[-1]
             position += 2
             
@@ -345,6 +345,15 @@ def check():
             stack.append(number(A))
         else:
             stack.append(str(A))
+
+        position += 1
+
+    elif currChar == "M":
+        A = stack.pop()
+        B = stack.pop()
+
+        if type(A) != str and type(B) != str:
+            stack.append(B%A)
 
         position += 1
         
